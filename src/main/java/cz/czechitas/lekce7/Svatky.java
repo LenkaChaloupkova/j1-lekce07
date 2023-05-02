@@ -92,7 +92,7 @@ public class Svatky {
    * @param jmeno Jméno.
    * @param denMesic Den a měsíc, kdy má dané jméno svátek.
    */
-  public void pridatSvatek(String jmeno, MonthDay denMesic) { //proc "jmeno, MonthDay denMesic"?
+  public void pridatSvatek(String jmeno, MonthDay denMesic) {
     svatky.put(jmeno, denMesic);
   }
 
@@ -103,7 +103,7 @@ public class Svatky {
    * @param mesic Měsíc, kdy má dané jméno svátek (1–12).
    */
   public void pridatSvatek(String jmeno, int den, int mesic) {
-    pridatSvatek(jmeno, MonthDay.of(den, mesic)); // v reseni je nejdriv mesic, a pak den, proc?
+    pridatSvatek(jmeno, MonthDay.of(mesic, den));
   }
 
   /**
@@ -113,7 +113,7 @@ public class Svatky {
    * @param mesic Měsíc, kdy má dané jméno svátek.
    */
   public void pridatSvatek(String jmeno, int den, Month mesic) {
-    pridatSvatek(jmeno, den, mesic); //Filip ma jinak v reseni
+    pridatSvatek(jmeno, MonthDay.of(mesic, den));
   }
 
   /**
@@ -121,6 +121,6 @@ public class Svatky {
    * @param jmeno Jméno ke smazání.
    */
   public void smazatSvatek(String jmeno) {
-    svatky.remove(jmeno); //při výběru "remove" to ale nabízí Monthday.. ne jméno?
+    svatky.remove(jmeno);
   }
 }
