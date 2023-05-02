@@ -76,7 +76,7 @@ public class Svatky {
    * @return
    */
   public int getPocetJmen() {
-    return svatky.keySet().size();//TODO - hotovo - Filip tam ma jen return svatky.size(); ?
+    return svatky.size();
   }
 
   /**
