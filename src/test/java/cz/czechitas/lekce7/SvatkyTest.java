@@ -86,6 +86,10 @@ class SvatkyTest {
   @Test
   void getPocetJmen() {
     //TODO Otestovat, že vrací počet jmen, která máme v seznamu
+    Svatky svatky = new Svatky();
+    int skutecnyPocetJmen = svatky.getPocetJmen();
+    int ocekavanyPocetJmen = 37;
+    assertEquals(ocekavanyPocetJmen,skutecnyPocetJmen);
   }
 
   /**
@@ -95,6 +99,10 @@ class SvatkyTest {
   //@Disabled("28.3.2023 nefunguje, zitra to Tomas opravi.") // vlozil behem hodiny Filip jako ukazku
   void getSeznamJmen() {
     //TODO Zkontrolovat, že seznam jmen má správný počet položek.
+    Svatky svatky = new Svatky();
+    int skutecnyPocetJmen = svatky.getSeznamJmen().size();
+    int ocekavanyPocetJmen = 37;
+    assertEquals(ocekavanyPocetJmen,skutecnyPocetJmen);
   }
 
   /**
@@ -103,6 +111,13 @@ class SvatkyTest {
   @Test
   void pridatSvatekDenMesicInt() {
     //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
+    Svatky svatky = new Svatky();
+    String jmeno = "Simona";
+
+    svatky.pridatSvatek(jmeno, 12, 12);
+
+    assertTrue(svatky.jeVSeznamu(jmeno));
+    assertEquals(MonthDay.of(12, 12), svatky.kdyMaSvatek(jmeno));
   }
 
   /**
